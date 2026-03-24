@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ext Contrast</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">Erisilebilirlik</p>
+        <h1>Kontrast ve Yazi Boyutu</h1>
+        <p class="subtitle">Aktif sekmede arka plan ve yazi gorunumunu iyilestir.</p>
+      </div>
+
+      <section class="control-group">
+        <label class="switch">
+          <input id="enabled" type="checkbox" />
+          <span>Ozellikleri etkinlestir</span>
+        </label>
+      </section>
+
+      <section class="control-group">
+        <label for="theme">Kontrast modu</label>
+        <select id="theme">
+          <option value="dark">Siyah arka plan / beyaz yazi</option>
+          <option value="light">Beyaz arka plan / siyah yazi</option>
+          <option value="sepia">Acik kahve arka plan / koyu yazi</option>
+          <option value="blue">Koyu mavi arka plan / sari yazi</option>
+        </select>
+      </section>
+
+      <section class="control-group">
+        <div class="label-row">
+          <label for="fontScale">Yazi boyutu</label>
+          <output id="fontScaleValue">100%</output>
+        </div>
+        <input id="fontScale" type="range" min="100" max="200" step="10" value="100" />
+      </section>
+
+      <section class="control-group">
+        <button id="reset" class="secondary" type="button">Sifirla</button>
+      </section>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

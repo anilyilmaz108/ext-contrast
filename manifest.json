@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Ext Contrast",
+  "description": "Sayfalarda kontrastli arka plan ve daha buyuk yazi boyutu saglayan erisilebilirlik uzantisi.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Ext Contrast",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
