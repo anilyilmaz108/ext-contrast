@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ext Contrast</title>
-    <link rel="stylesheet" href="popup.css" />
-  </head>
-  <body>
-    <main class="panel">
-      <div class="panel__header">
-        <p class="eyebrow">Erisilebilirlik</p>
-        <h1>Kontrast ve Yazi Boyutu</h1>
-        <p class="subtitle">Aktif sekmede arka plan ve yazi gorunumunu iyilestir.</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ext Contrast</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <main class="panel">
+    <div class="panel__header">
+      <p class="eyebrow">Erisilebilirlik</p>
+      <h1>Kontrast ve Yazi Boyutu</h1>
+      <p class="subtitle">Aktif sekmede arka plan ve yazı görünümünü iyileştir.</p>
+    </div>
+
+    <section class="control-group">
+      <label class="switch">
+        <input id="enabled" type="checkbox" />
+        <span>Özellikleri etkinleştir</span>
+      </label>
+    </section>
+
+    <section class="control-group">
+      <label for="theme">Kontrast modu</label>
+      <select id="theme">
+        <option value="dark">Siyah arka plan / beyaz yazı</option>
+        <option value="light">Beyaz arka plan / siyah yazı</option>
+        <option value="sepia">Açık kahve arka plan / koyu yazı</option>
+        <option value="blue">Koyu mavi arka plan / sarı yazı</option>
+      </select>
+    </section>
+
+    <section class="control-group">
+      <div class="label-row">
+        <label for="fontScale">Yazı boyutu</label>
+        <output id="fontScaleValue">100%</output>
       </div>
+      <input id="fontScale" type="range" min="100" max="200" step="10" value="100" />
+    </section>
 
-      <section class="control-group">
-        <label class="switch">
-          <input id="enabled" type="checkbox" />
-          <span>Ozellikleri etkinlestir</span>
-        </label>
-      </section>
+    <section class="control-group">
+      <label for="fontFamily">Yazı tipi</label>
+      <select id="fontFamily">
+        <option value="accessible">Erişilebilir sans-serif</option>
+        <option value="arial">Arial</option>
+        <option value="verdana">Verdana</option>
+        <option value="tahoma">Tahoma</option>
+        <option value="system">Sistem yazısı</option>
+      </select>
+    </section>
 
-      <section class="control-group">
-        <label for="theme">Kontrast modu</label>
-        <select id="theme">
-          <option value="dark">Siyah arka plan / beyaz yazi</option>
-          <option value="light">Beyaz arka plan / siyah yazi</option>
-          <option value="sepia">Acik kahve arka plan / koyu yazi</option>
-          <option value="blue">Koyu mavi arka plan / sari yazi</option>
-        </select>
-      </section>
+    <section class="control-group">
+      <button id="reset" class="secondary" type="button">Sıfırla</button>
+    </section>
 
-      <section class="control-group">
-        <div class="label-row">
-          <label for="fontScale">Yazi boyutu</label>
-          <output id="fontScaleValue">100%</output>
-        </div>
-        <input id="fontScale" type="range" min="100" max="200" step="10" value="100" />
-      </section>
+    <p id="status" class="status" aria-live="polite"></p>
+  </main>
 
-      <section class="control-group">
-        <label for="fontFamily">Yazi tipi</label>
-        <select id="fontFamily">
-          <option value="accessible">Erisilebilir sans-serif</option>
-          <option value="arial">Arial</option>
-          <option value="verdana">Verdana</option>
-          <option value="tahoma">Tahoma</option>
-          <option value="system">Sistem yazisi</option>
-        </select>
-      </section>
+  <script src="popup.js"></script>
+</body>
 
-      <section class="control-group">
-        <button id="reset" class="secondary" type="button">Sifirla</button>
-      </section>
-
-      <p id="status" class="status" aria-live="polite"></p>
-    </main>
-
-    <script src="popup.js"></script>
-  </body>
 </html>
