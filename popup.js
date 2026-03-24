@@ -1,12 +1,14 @@
 const DEFAULT_SETTINGS = {
   enabled: true,
   theme: "dark",
-  fontScale: 100
+  fontScale: 100,
+  fontFamily: "accessible"
 };
 
 const enabledInput = document.getElementById("enabled");
 const themeInput = document.getElementById("theme");
 const fontScaleInput = document.getElementById("fontScale");
+const fontFamilyInput = document.getElementById("fontFamily");
 const fontScaleValue = document.getElementById("fontScaleValue");
 const resetButton = document.getElementById("reset");
 const statusText = document.getElementById("status");
@@ -28,6 +30,7 @@ function syncForm(settings) {
   enabledInput.checked = settings.enabled;
   themeInput.value = settings.theme;
   fontScaleInput.value = settings.fontScale;
+  fontFamilyInput.value = settings.fontFamily;
   updateScaleLabel(settings.fontScale);
 }
 
@@ -40,7 +43,8 @@ async function saveSettings() {
   const settings = {
     enabled: enabledInput.checked,
     theme: themeInput.value,
-    fontScale: Number(fontScaleInput.value)
+    fontScale: Number(fontScaleInput.value),
+    fontFamily: fontFamilyInput.value
   };
 
   await chrome.storage.sync.set(settings);
@@ -49,6 +53,7 @@ async function saveSettings() {
 
 enabledInput.addEventListener("change", saveSettings);
 themeInput.addEventListener("change", saveSettings);
+fontFamilyInput.addEventListener("change", saveSettings);
 fontScaleInput.addEventListener("input", () => {
   updateScaleLabel(fontScaleInput.value);
 });

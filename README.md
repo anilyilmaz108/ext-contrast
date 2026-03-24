@@ -6,6 +6,7 @@ Ozellikler:
 
 - Sayfadaki kontrast temasini degistirir.
 - Yazilari yuzde 100 ile 200 arasinda buyutur.
+- Arial, Verdana, Tahoma gibi daha okunakli yazi tiplerine gecebilir.
 - Secilen ayarlari tarayicida saklar.
 
 Kurulum:
